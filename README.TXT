@@ -5,4 +5,5 @@ IF EXIST "A.dat" "B.dat" THEN
 	EXCUTE ./main A.dat B.dat
 	
 	
-1000 x 1000 Matirx product with 4 thread
+1000 x 1000 Matirx product
+Use 4 thread
