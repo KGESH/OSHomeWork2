@@ -17,7 +17,7 @@ int main(int argc, char* argv[]){
     auto matrix_d = new MyMatrix();
     auto matrix_result = new MyMatrix("C.dat");
     
-    if(argv[1] == nullptr){ // if not exist A.dat B.dat
+    if (argv[1] == nullptr){ // if not exist A.dat B.dat
                             // create A.dat B.dat
         auto matrix_a = new MyMatrix("A.dat");
         auto matrix_b = new MyMatrix("B.dat");
@@ -31,7 +31,7 @@ int main(int argc, char* argv[]){
         delete matrix_a;
         delete matrix_b;
 
-    } else{
+    } else {
         matrix_c->ReadMatrix(argv[1]);
         matrix_d->ReadMatrix(argv[2]);
     }
@@ -90,9 +90,9 @@ void MatrixProduct(const MyMatrix& matrix_a, const MyMatrix& matrix_b, MyMatrix 
     int row, column;
     int i;
 
-    for(row = start; row<end; row++){
-        for(column = 0; column<kMaxColumn;column++){
-            for(i=0;i<kMaxColumn;i++){
+    for (row = start; row<end; row++){
+        for (column = 0; column<kMaxColumn;column++){
+            for (i=0;i<kMaxColumn;i++){
                 matrix_result->matrix_[row][column] += matrix_a.matrix_[row][i] * matrix_b.matrix_[i][column];
             }
         }

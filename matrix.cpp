@@ -18,12 +18,12 @@ void MyMatrix::CreateMatrix(){
 void MyMatrix::CreateDataFile(){
     std::fstream output_stream(file_name_, std::ios::out);
 
-    if(!output_stream){
+    if (!output_stream){
         std::cout << "file open failed!" << std::endl;
     }
 
-    for(row_ = 0; row_<kMaxRow; row_++) {
-        for(column_ = 0; column_<kMaxColumn; column_++){
+    for (row_ = 0; row_<kMaxRow; row_++) {
+        for (column_ = 0; column_<kMaxColumn; column_++){
             output_stream << matrix_[row_][column_] << " ";
         }
         output_stream << std::endl;
@@ -38,12 +38,12 @@ void MyMatrix::ReadMatrix(const std::string& file_name){
     file_name_ = file_name;
     std::fstream input_stream(file_name_, std::ios::in);
 
-    if(!input_stream){
+    if (!input_stream){
         std::cout << "file open failed!" << std::endl;
     }
 
-    for(row_ = 0; row_<kMaxRow; row_++){
-        for(column_ = 0; column_<kMaxColumn; column_++){
+    for (row_ = 0; row_<kMaxRow; row_++){
+        for (column_ = 0; column_<kMaxColumn; column_++){
             input_stream >> matrix_[row_][column_];            
         }
     }
@@ -57,8 +57,8 @@ void MyMatrix::PrintMatrix() const{
     int row = row_;
     int column = column_;
 
-    for(row = 0; row<kMaxRow;row++){
-        for(column = 0; column<kMaxColumn;column++){
+    for (row = 0; row<kMaxRow;row++){
+        for (column = 0; column<kMaxColumn;column++){
             std::cout << matrix_[row][column] << " ";
         }
         std::cout << std::endl;
@@ -72,7 +72,7 @@ void MyMatrix::PrintMatrix(const int& start, const int& end) const{
     int column;
     
     for (row = start; row<=end; row++){
-        for(column = 0; column<kMaxColumn; column++){
+        for (column = 0; column<kMaxColumn; column++){
             std::cout << matrix_[row][column] << " ";
         }
         std::cout << std::endl;
